@@ -13,4 +13,82 @@
         <maven.compiler.target>15</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <!-- Test Library for creating tests, test cases -->
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
+        </dependency>
+
+        <!-- Ui Automation libraries -->
+
+        <!-- Selenium library -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+
+        <!-- Web Driver for browser -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>4.2.2</version>
+        </dependency>
+
+        <!-- Cucumber related libraries -->
+
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-jvm-deps</artifactId>
+            <version>1.0.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>1.2.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>1.2.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.trivago.rta</groupId>
+                <artifactId>cluecumber-report-plugin</artifactId>
+                <version>2.6.1</version>
+                <executions>
+                    <execution>
+                        <id>report</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>reporting</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <sourceJsonReportDirectory>${project.basedir}/report/json/</sourceJsonReportDirectory>
+                    <generatedHtmlReportDirectory>${project.basedir}/report/generated-report</generatedHtmlReportDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
 </project>
