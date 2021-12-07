@@ -14,10 +14,11 @@ mvn test -Dcucumber.options="--tags @smoke" -Dbrowser="chrome"
 Supported browser:
 
 Browser	Options String
-Google Chrome	-Dbrowser="chrome"
-Mozilla Firefox	-Dbrowser="firefox"
-Ms Edge	-Dbroswer="edge"
+    Google Chrome	-Dbrowser="chrome"
+    Mozilla Firefox	-Dbrowser="firefox"
+    Ms Edge	-Dbroswer="edge"
+
 Generating the Report
-After the test execution, you can generate CluClumber Test Report by executing following maven command.
+    After the test execution, you can generate CluClumber Test Report by executing following maven command.
 
 mvn cluecumber-report:reporting
